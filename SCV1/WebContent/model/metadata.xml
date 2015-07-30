@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZCATALOG_SRV" xml:lang="en"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Product" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CatalogID"/>
+                    <PropertyRef Name="ProductID"/>
+                </Key>
+                <Property Name="CatalogID" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Catalog" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AvailableForPickup" Type="Edm.String" MaxLength="1" sap:label="Product attr.1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProductRating" Type="Edm.String" MaxLength="30" sap:label="Laboratory desc" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProductID" Type="Edm.String" Nullable="false" MaxLength="18" sap:label="Material" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Category" Type="Edm.String" MaxLength="20" sap:label="Matl Grp Desc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ShortDetail" Type="Edm.String" MaxLength="60" sap:label="Mat.grp desc. 2" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dimensions" Type="Edm.String" MaxLength="32" sap:label="Size/dimensions" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GrossWeight" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Gross Weight" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WeightUnit" Type="Edm.String" MaxLength="3" sap:label="Weight unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="ShippingFee" Type="Edm.Decimal" Precision="11" Scale="2" sap:unit="CurrencyCode" sap:label="Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CurrencyCode" Type="Edm.String" MaxLength="5" sap:label="Cond. currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="SKU" Type="Edm.String" MaxLength="18" sap:label="Old matl number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Price" Type="Edm.Decimal" Precision="11" Scale="2" sap:unit="CurrencyCode" sap:label="Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Inventory" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="UnitOfMeasure" sap:label="Unrestricted" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UnitOfMeasure" Type="Edm.String" MaxLength="3" sap:label="Base Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="Color" Type="Edm.String" MaxLength="20" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DeliveryTime" Type="Edm.Decimal" Precision="3" Scale="0" sap:label="Pl. Deliv. Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Features" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProductURL" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TaxRate" Type="Edm.Decimal" Precision="11" Scale="2" sap:label="Amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SalesOrder" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="OrderID"/>
+                </Key>
+                <Property Name="OrderID" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Sales Document" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NetValue" Type="Edm.Decimal" Precision="29" Scale="9" sap:unit="CurrencyCode" sap:label="Currency amount" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CurrencyCode" Type="Edm.String" MaxLength="5" sap:label="Doc. Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="SoldToParty" Type="Edm.String" MaxLength="10" sap:label="Sold-to party" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderType" Type="Edm.String" MaxLength="4" sap:label="Sales Doc. Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToItems" Relationship="ZCATALOG_SRV.Assoc_SalesOrder_SalesOrderItems" FromRole="FromRole_Assoc_SalesOrder_SalesOrderItems" ToRole="ToRole_Assoc_SalesOrder_SalesOrderItems"/>
+            </EntityType>
+            <EntityType Name="SalesOrderItem" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ItemID"/>
+                    <PropertyRef Name="OrderID"/>
+                </Key>
+                <Property Name="Unit" Type="Edm.String" MaxLength="3" sap:label="Target qty UoM" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="Quantity" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Target quantity" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ProductID" Type="Edm.String" MaxLength="18" sap:label="Material" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ItemID" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="Item" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderID" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Sales Document" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="Assoc_SalesOrder_SalesOrderItems" sap:content-version="1">
+                <End Type="ZCATALOG_SRV.SalesOrder" Multiplicity="1" Role="FromRole_Assoc_SalesOrder_SalesOrderItems"/>
+                <End Type="ZCATALOG_SRV.SalesOrderItem" Multiplicity="*" Role="ToRole_Assoc_SalesOrder_SalesOrderItems"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Assoc_SalesOrder_SalesOrderItems">
+                        <PropertyRef Name="OrderID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Assoc_SalesOrder_SalesOrderItems">
+                        <PropertyRef Name="OrderID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZCATALOG_SRV" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="ProductSet" EntityType="ZCATALOG_SRV.Product" sap:pageable="false" sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="SalesOrderSet" EntityType="ZCATALOG_SRV.SalesOrder" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SalesOrderItemSet" EntityType="ZCATALOG_SRV.SalesOrderItem" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="Assoc_SalesOrder_SalesOrderItems_AssocSe" Association="ZCATALOG_SRV.Assoc_SalesOrder_SalesOrderItems" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SalesOrderSet" Role="FromRole_Assoc_SalesOrder_SalesOrderItems"/>
+                    <End EntitySet="SalesOrderItemSet" Role="ToRole_Assoc_SalesOrder_SalesOrderItems"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="https://webide-p1941494346trial.dispatcher.hanatrial.ondemand.com/destinations/SAPGatewayDemo/sap/opu/odata/sap/ZCATALOG_SRV/$metadata"
+                xmlns:atom="http://www.w3.org/2005/Atom"/>
+                <atom:link rel="latest-version" href="https://webide-p1941494346trial.dispatcher.hanatrial.ondemand.com/destinations/SAPGatewayDemo/sap/opu/odata/sap/ZCATALOG_SRV/$metadata"
+                    xmlns:atom="http://www.w3.org/2005/Atom"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

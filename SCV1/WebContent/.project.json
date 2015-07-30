@@ -1,0 +1,34 @@
+{
+  "dataBinding": {
+    "/view/Master.view.xml": {
+      "entitySet": "ProductSet"
+    },
+    "/view/Details.view.xml": {
+      "entitySet": "ProductSet"
+    },
+    "/view/Main.view.xml": {
+      "entitySet": "ProductSet"
+    }
+  },
+  "generation": [
+    {
+      "templateId": "ui5template.fioriFullScreen",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Mon, 27 Jul 2015 11:49:04 GMT"
+    }
+  ],
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/ZCATALOG_SRV/",
+    "metadataFilePath": "model/metadata.xml",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  }
+}

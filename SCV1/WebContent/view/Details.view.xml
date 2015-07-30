@@ -1,0 +1,35 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:ui="sap.ca.ui" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" controllerName="SCV_test1.view.Details">
+	<Page id="DetailsPage" title="{i18n&gt;detailTitle}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<ObjectHeader id="details_object_header" title="{WeightUnit}" number="{GrossWeight}" numberUnit="{CurrencyCode}">			
+				<statuses id="details_statuses">
+					<ObjectStatus id="details_statuses_status1" text="{WeightUnit}" state="None">					
+					</ObjectStatus>			
+				</statuses>
+				
+				<attributes id="details_attributes"> 
+						<ObjectAttribute id="details_attributes_att1" title="Catalog" text="{CatalogID}">					
+						</ObjectAttribute> 
+					<ObjectAttribute id="details_attributes_att2" title="Description" text="{Name}">   						
+    					</ObjectAttribute> 
+					<ObjectAttribute id="details_attributes_att3" title="Amount" text="{Price}">   						
+    					</ObjectAttribute>			
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar selectedKey="__filter3" id="__bar1">
+			    <items>
+			        <IconTabFilter text="Open" count="10" icon="sap-icon://task" iconColor="Critical" id="__filter4"/>
+			        <IconTabFilter text="Shipped" count="5" icon="sap-icon://shipping-status" iconColor="Positive" id="__filter5"/></items>
+			</IconTabBar>
+			
+			<!--Extension Point 1-->
+			<core:ExtensionPoint name="extensionAfterObjectHeader"/>
+
+			<!--Navigation Table -->
+			<!--Extension Point 2-->
+			<core:ExtensionPoint name="extensionAfterNavigationTable"/>
+		</content>
+		<footer>
+		</footer>		
+	</Page>
+</core:View>
